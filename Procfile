@@ -1,0 +1,1 @@
+web: gunicorn password_proj.wsgi --log-file -
