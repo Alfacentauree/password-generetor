@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Password | Generetor</title>
+</head>
+
+<body>
+    <body>
+        <div class="container">
+            <form action="{% url 'password' %}">
+                 <select name=length class="form-select">
+                        <option value="0" selected='selected'>Select Length</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>      
+                 </select>
+                <div class="container-box">
+                  <div>
+                  <label for="Upper">
+                    <input type="checkbox" name="uppercase" id="Upper"> 
+                    <span>Upper Latr</span>
+                  </label>
+                  
+                  <label for="number">
+                      <input type="checkbox" name="number" id="number">
+                      <span>Number</span>
+                </label>
+                 
+                  <label for="special">
+                    <input type="checkbox" name="Special" id="special">
+                    <span>Special</span>
+                  </label>
+                </div>
+              </div>
+
+                <div class="container-btn">
+                    <input type="submit" value="Generater">
+                </div>
+                    
+                
+
+                 
+            </form>
+            
+    
+        </div>
+</body>
+</html>
