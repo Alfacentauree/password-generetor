@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+body {
+    margin: 200px auto;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgb(62, 62, 233) 50%,
+        rgb(255, 255, 255) 50%
+    )fixed;
+}
+
+
+
+.container {
+    background-color: white;
+    width: 600px;
+    padding: 70px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.form-select {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 40px;
+    left: 50%;
+    background-color: rgb(233, 28, 165);
+    border-radius: 4px;
+    color: white;
+    
+
+}
+
+.container-box {
+   
+    text-align: center;
+    padding-top: 25px;
+    
+}
+
+.container-btn {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+/* input[type='checkbox'] {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    
+} */
+
+.container h1 {
+    text-align: center;
+    margin: 10px;
+    background: chartreuse;
+}
+
+input[type='submit'] {
+    background-color: rgb(233, 49, 193);
+    font-size: 20px;
+    position: relative;
+    width: 300px;
+    border-radius: 20px;
+    color: white
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.container-box div {
+    margin: 10px;
+}
+
+.container-box div label {
+    cursor: pointer;
+}
+
+.container-box div label input[type='checkbox'] {
+    display: none;
+}
+
+.container-box div label span {
+    position: relative;
+    display: inline-block;
+    background: #424242;
+    padding: 15px 30px;
+    color: #555;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+}
+
+.container-box div label span::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255,0.1);
+}
+.container-box div:nth-child(3n+1) label input[type='checkbox']:checked ~ span 
+{
+    background: #e91e61;
+    color: #fff;
+    box-shadow: 0 2px  20px #e91e61;
+}
+.container-box div:nth-child(3n+2) label input[type='checkbox']:checked ~ span 
+{
+    background: #df0;
+    color: #fff;
+    box-shadow: 0 2px  20px #0f0;
+}
+.container-box div:nth-child(3n+3) label input[type='checkbox']:checked ~ span 
+{
+    background: rgb(255, 0, 0);
+    color: #fff;
+    box-shadow: 0 2px  20px rgb(230, 0, 255);
+}
