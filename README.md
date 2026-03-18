@@ -1,22 +1,21 @@
 # 🔐 Secure Pass: Modern Password Generator
 
 ![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![UI](https://img.shields.io/badge/UI-Glassmorphism-6366f1?style=for-the-badge)
 
-A sleek, responsive, and secure password generation tool built with Django. It features a modern Glassmorphism UI, customizable generation logic, and instant "Copy to Clipboard" functionality.
+A sleek, responsive, and secure password generation tool built with Django. It features a premium cinematic UI, interactive controls, and instant utility features.
 
 ## ✨ Key Features
 
-- **💎 Modern UI:** High-end Glassmorphism design with dynamic radial gradients.
-- **⚙️ Fully Customizable:** Choose password length and toggle uppercase, numbers, and special characters.
-- **📋 One-Click Copy:** Instant copy functionality for generated passwords.
-- **🌓 Adaptive Theme:** Designed to look great in both light and dark environments.
-- **📱 Responsive Design:** Optimized for mobile and desktop screens.
-- **🛡️ Secure Generation:** Uses Python's internal logic for robust character randomization.
+- **💎 Glassmorphism UI:** High-end translucent design with dynamic radial gradients and backdrop-blur effects.
+- **🎚️ Interactive Slider:** Smooth range slider (6-32 chars) with a real-time character counter for effortless selection.
+- **⚙️ Deep Customization:** Toggle uppercase letters, numbers, and special characters to meet any security requirement.
+- **📋 One-Click Copy:** Integrated "Copy to Clipboard" functionality with visual success feedback.
+- **🌓 Adaptive Theme:** Sophisticated dark-mode aesthetic optimized for visual comfort.
+- **⚡ Fast & Lightweight:** Built with modern CSS and vanilla JavaScript for instant performance.
 
 ## 🚀 Getting Started
-
-Follow these steps to run the project locally.
 
 ### 1. Installation
 ```bash
@@ -47,10 +46,13 @@ Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) to start generating secure 
 
 ## 🛠️ Technology Stack
 
-- **Backend:** Django 4.2
-- **Frontend:** HTML5, CSS3 (Modern Glassmorphism)
+- **Backend:** Django 4.2 (Python 3.12 compatible)
+- **Frontend:** HTML5, Modern CSS3 (Variables, Gradients, Flexbox)
 - **Fonts:** Inter, Poppins, JetBrains Mono
-- **Deployment:** Heroku Ready (includes Procfile & WhiteNoise)
+- **Deployment:** Heroku Ready (Procfile & WhiteNoise included)
 
 ## 🤝 Contributing
 Contributions are always welcome! Feel free to fork the project and submit a PR.
+
+---
+Developed with ❤️ by [Alfacentauree](https://github.com/Alfacentauree)
