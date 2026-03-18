@@ -5,53 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator | Secure Pass</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Password | Generetor</title>
 </head>
 
 <body>
-    <body>
-        <div class="container">
-            <form action="{% url 'password' %}">
-                 <select name=length class="form-select">
-                        <option value="0" selected='selected'>Select Length</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>      
-                 </select>
-                <div class="container-box">
-                  <div>
-                  <label for="Upper">
-                    <input type="checkbox" name="uppercase" id="Upper"> 
-                    <span>Upper Latr</span>
-                  </label>
-                  
-                  <label for="number">
-                      <input type="checkbox" name="number" id="number">
-                      <span>Number</span>
-                </label>
-                 
-                  <label for="special">
-                    <input type="checkbox" name="Special" id="special">
-                    <span>Special</span>
-                  </label>
-                </div>
-              </div>
+    <div class="container">
+        <h1>Password Generator</h1>
+        
+        <form action="{% url 'password' %}">
+            <div class="mb-4">
+                <label class="form-label small fw-bold text-muted text-uppercase d-block text-start mb-2 ms-1">Password Length</label>
+                <select name="length" class="form-select">
+                    <option value="8">8 Characters</option>
+                    <option value="10">10 Characters</option>
+                    <option value="12" selected>12 Characters</option>
+                    <option value="14">14 Characters</option>
+                    <option value="16">16 Characters</option>
+                    <option value="20">20 Characters</option>
+                    <option value="24">24 Characters</option>
+                </select>
+            </div>
 
-                <div class="container-btn">
-                    <input type="submit" value="Generater">
-                </div>
+            <div class="container-box">
+                <label class="form-label small fw-bold text-muted text-uppercase d-block text-start mb-3 ms-1">Customization</label>
+                <div class="options-grid">
+                    <label class="option-item" for="Upper">
+                        <span>Include Uppercase</span>
+                        <input type="checkbox" name="uppercase" id="Upper" checked> 
+                    </label>
                     
-                
+                    <label class="option-item" for="number">
+                        <span>Include Numbers</span>
+                        <input type="checkbox" name="number" id="number" checked>
+                    </label>
+                    
+                    <label class="option-item" for="special">
+                        <span>Special Characters</span>
+                        <input type="checkbox" name="Special" id="special">
+                    </label>
+                </div>
+            </div>
 
-                 
-            </form>
-            
-    
-        </div>
+            <button type="submit" class="btn-generate">
+                Generate Secure Password
+            </button>
+        </form>
+    </div>
 </body>
 </html>

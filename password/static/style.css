@@ -1,142 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-dark: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 body {
-    margin: 200px auto;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgb(62, 62, 233) 50%,
-        rgb(255, 255, 255) 50%
-    )fixed;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
-
-
 .container {
-    background-color: white;
-    width: 600px;
-    padding: 70px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    -webkit-perspective: 300px;
-    perspective: 300px;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
 }
 
 .form-select {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    width: 400px;
-    height: 40px;
-    left: 50%;
-    background-color: rgb(233, 28, 165);
-    border-radius: 4px;
-    color: white;
-    
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
 .container-box {
-   
-    text-align: center;
-    padding-top: 25px;
-    
+    margin-bottom: 2.5rem;
 }
 
-.container-btn {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 10px;
-}
-/* input[type='checkbox'] {
-    position: relative;
-    width: 40px;
-    height: 20px;
-    
-} */
-
-.container h1 {
-    text-align: center;
-    margin: 10px;
-    background: chartreuse;
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-input[type='submit'] {
-    background-color: rgb(233, 49, 193);
-    font-size: 20px;
-    position: relative;
-    width: 300px;
-    border-radius: 20px;
-    color: white
+.option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-
-h1 {
-    text-align: center;
-    margin-top: 10%;
+.option-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.container-box div {
-    margin: 10px;
-}
-
-.container-box div label {
+.option-item input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--primary);
     cursor: pointer;
 }
 
-.container-box div label input[type='checkbox'] {
-    display: none;
+.option-item span {
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
-.container-box div label span {
-    position: relative;
-    display: inline-block;
-    background: #424242;
-    padding: 15px 30px;
-    color: #555;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    border-radius: 30px;
-    font-size: 20px;
-    transition: 0.5s;
-    user-select: none;
-    overflow: hidden;
+.option-item input:checked + span {
+    color: var(--text-main);
 }
 
-.container-box div label span::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.btn-generate {
     width: 100%;
-    height: 50%;
-    background: rgba(255, 255, 255,0.1);
+    padding: 1.25rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
 }
-.container-box div:nth-child(3n+1) label input[type='checkbox']:checked ~ span 
-{
-    background: #e91e61;
-    color: #fff;
-    box-shadow: 0 2px  20px #e91e61;
+
+.btn-generate:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.4);
 }
-.container-box div:nth-child(3n+2) label input[type='checkbox']:checked ~ span 
-{
-    background: #df0;
-    color: #fff;
-    box-shadow: 0 2px  20px #0f0;
+
+.btn-generate:active {
+    transform: translateY(0);
 }
-.container-box div:nth-child(3n+3) label input[type='checkbox']:checked ~ span 
-{
-    background: rgb(255, 0, 0);
-    color: #fff;
-    box-shadow: 0 2px  20px rgb(230, 0, 255);
+
+/* Password Result Page */
+.password-display {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 16px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: var(--primary);
+    word-break: break-all;
+    margin: 2rem 0;
+    border: 1px dashed var(--card-border);
+}
+
+.btn-copy {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-muted);
 }
