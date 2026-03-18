@@ -21,17 +21,12 @@
         <h1>Password Generator</h1>
         
         <form action="{% url 'password' %}">
-            <div class="mb-4">
-                <label class="form-label small fw-bold text-muted text-uppercase d-block text-start mb-2 ms-1">Password Length</label>
-                <select name="length" class="form-select">
-                    <option value="8">8 Characters</option>
-                    <option value="10">10 Characters</option>
-                    <option value="12" selected>12 Characters</option>
-                    <option value="14">14 Characters</option>
-                    <option value="16">16 Characters</option>
-                    <option value="20">20 Characters</option>
-                    <option value="24">24 Characters</option>
-                </select>
+            <div class="range-container">
+                <div class="range-header">
+                    <label class="form-label small fw-bold text-muted text-uppercase mb-0">Password Length</label>
+                    <span class="length-display" id="rangeValue">12</span>
+                </div>
+                <input type="range" name="length" id="lengthRange" min="6" max="32" value="12" oninput="updateRangeValue(this.value)">
             </div>
 
             <div class="container-box">
@@ -59,5 +54,11 @@
             </button>
         </form>
     </div>
+
+    <script>
+        function updateRangeValue(val) {
+            document.getElementById('rangeValue').innerText = val;
+        }
+    </script>
 </body>
 </html>
